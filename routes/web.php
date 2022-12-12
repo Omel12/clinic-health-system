@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('users.admin.dashboard');
+    return view('auth.login');
 })->name('admin-dashboard');
 
 Route::resource('/departments', 'DepartmentController');
@@ -57,3 +57,7 @@ Route::get('/gettemplatebyid/', 'LapReportController@getTemplateById')->name('ge
 Route::get('/getpaymentitembyitemid/', 'PaymentItemController@getPaymentItemByItemId')->name('get-payment-item-by-item-id');
 Route::get('/getpaymentitembydoctorid/', 'PaymentItemController@getPaymentItemByDoctorId')->name('get-payment-item-by-doctor_id');
 Route::get('/getuserbyusertype/', 'PublicController@getUserByUserType')->name('get-user-by-user-type');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

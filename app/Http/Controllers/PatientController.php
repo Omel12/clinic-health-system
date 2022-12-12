@@ -42,7 +42,7 @@ class PatientController extends Controller
             'type' => 'patient'
         ]);
 
-        if ($request->departments){
+        if($request->picture){
             $pic = $request->picture->store('patients_pictures');
             $patient->picture = $pic;
             $patient->save();
